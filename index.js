@@ -1,5 +1,8 @@
 var express = require('express');
+require('dotenv').config();
 var app = express();
+
+var {PORT} = process.env;
 
 app.get('/api', function (req, res) {
     res.send('Hello World!');
@@ -7,6 +10,6 @@ app.get('/api', function (req, res) {
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(PORT, function () {
+    console.log(`Example app listening on port ${PORT}!`);
 });

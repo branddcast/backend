@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start:dev": "set PORT=3000 && node index.js",
+    "start": "set PORT=8080 && node index.js"
   },
   "author": "branddcast",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
   }
 }

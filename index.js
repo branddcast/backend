@@ -1,8 +1,9 @@
 var express = require('express');
-require('dotenv').config();
+const config = require('./config.js');
 var app = express();
 
-var {PORT} = process.env;
+console.log(`NODE_ENV=${config.NODE_ENV}`);
+var {PORT} = config;
 
 app.get('/api', function (req, res) {
     res.send('Hello World!');

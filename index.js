@@ -1,11 +1,14 @@
 var express = require('express');
 const config = require('./config.js');
 var app = express();
+var cors = require('cors');
 var {client} = require("./config/connect.js");
 const moviesController = require('./controllers/moviesController.js');
 
 console.log(`NODE_ENV=${config.NODE_ENV}`);
 var {PORT} = config;
+
+app.use(cors());
 
 const run = async () => {
     try {
